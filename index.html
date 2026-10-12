@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#09051b">
-<title>STAR Plus Matka — Results Dashboard</title>
+<title>STAR Plus Matka — Demo Results Dashboard</title>
 <style>
-:root{--bg:#09051b;--panel:#15102e;--panel2:#20143e;--pink:#ff3ed1;--cyan:#37e8ff;--gold:#ffd166;--text:#f7f3ff;--muted:#b8aecf;--green:#57f2a5}
+:root{--bg:#09051b;--panel:#15102e;--panel2:#20143e;--pink:#ff3ed1;--cyan:#37e8ff;--gold:#ffd166;--text:#f7f3ff;--muted:#b8aecf;--green:#57f2a5;--warning:#ffcf70}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#29104c 0,#09051b 55%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 .wrap{max-width:1100px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-weight:1000;font-size:18px;color:#0b0620;background:linear-gradient(135deg,var(--cyan),var(--pink),var(--gold));box-shadow:0 0 26px #ff3ed155}
-h1{margin:0;font-size:clamp(22px,5vw,36px);letter-spacing:.5px} .sub{color:var(--muted);font-size:13px}
+h1{margin:0;font-size:clamp(22px,5vw,36px);letter-spacing:.5px}.sub{color:var(--muted);font-size:13px}
 .pill{border:1px solid #59427b;border-radius:999px;padding:8px 12px;font-size:12px;color:var(--cyan);background:#130b2b}
 .hero{margin:22px 0;padding:24px;border:1px solid #6d3c90;border-radius:24px;background:linear-gradient(120deg,#29134aee,#11102bed);box-shadow:0 12px 40px #0005;position:relative;overflow:hidden}
 .hero:after{content:"★";position:absolute;right:18px;top:-30px;font-size:150px;color:#ffffff08}
@@ -23,40 +23,32 @@ button.secondary,.btn.secondary{background:#25193f;color:var(--text);border:1px 
 .resultrow{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #33244b}.resultrow:last-child{border-bottom:0}
 .numchips{display:flex;gap:7px;flex-wrap:wrap}.chip{min-width:40px;text-align:center;border-radius:10px;padding:8px;background:#281844;color:var(--cyan);font-weight:900;border:1px solid #51356f}
 .status{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--gold)}.dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
-input{width:100%;padding:12px;border-radius:10px;border:1px solid #55416f;background:#0c0820;color:var(--text);font-size:16px;margin:6px 0 10px}
-label{font-size:12px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.chart{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}.chart span{background:#21163b;border:1px solid #3d2a5d;border-radius:7px;padding:7px 0;text-align:center;font-size:12px;color:#d7ceec}
-.notice{background:#251c2c;border:1px solid #7e5a35;color:#ffe0a3;padding:12px;border-radius:12px;font-size:12px;line-height:1.5}.footer{padding:25px 0 10px;text-align:center;color:#8f83a9;font-size:12px}
-@media(max-width:720px){.card,.card.wide{grid-column:1/-1}.wrap{padding:13px}.hero{padding:19px}.chart{gap:4px}.chart span{padding:6px 0;font-size:11px}.two{grid-template-columns:1fr 1fr}}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid #55416f;background:#0c0820;color:var(--text);font-size:16px;margin:6px 0 10px}label{font-size:12px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.chart{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}.chart span{background:#21163b;border:1px solid #3d2a5d;border-radius:7px;padding:7px 0;text-align:center;font-size:12px;color:#d7ceec}
+.notice{background:#251c2c;border:1px solid #7e5a35;color:#ffe0a3;padding:12px;border-radius:12px;font-size:12px;line-height:1.5}.warning{margin:18px 0;background:#382313;border:2px solid #ffb84d;border-radius:14px;padding:14px;color:#fff0ca;font-weight:850;line-height:1.5}.demo-tag{display:inline-block;margin-top:6px;border:1px solid #ffb84d;background:#382313;color:#ffe0a3;border-radius:999px;padding:3px 8px;font-size:10px;font-weight:900;letter-spacing:.7px}.footer{padding:25px 0 10px;text-align:center;color:#8f83a9;font-size:12px}
+@media(max-width:720px){.card,.card.wide{grid-column:1/-1}.wrap{padding:13px}.hero{padding:19px}.chart{gap:4px}.chart span{padding:6px 0;font-size:11px}.two{grid-template-columns:1fr 1fr}.resultrow{align-items:flex-start;flex-wrap:wrap}}
 </style>
 </head>
 <body><main class="wrap">
-<header class="top">
-  <div class="brand"><div class="logo">★SP</div><div><h1>STAR <span class="gradient">PLUS</span> MATKA</h1><div class="sub">NEON RESULTS DASHBOARD</div></div></div>
-  <div class="pill">● MOBILE FRIENDLY</div>
-</header>
-<section class="hero">
-  <h2>YOUR GAME.<br><span class="gradient">YOUR DASHBOARD.</span></h2>
-  <p>A colorful, mobile-friendly results dashboard with number charts and handy tools. Connect an authorized results source to show verified live data.</p>
-  <div class="actions"><a class="btn" href="#results">View Dashboard</a><a class="btn secondary" href="#tools">Open Number Tools</a></div>
-</section>
+<header class="top"><div class="brand"><div class="logo">★SP</div><div><h1>STAR <span class="gradient">PLUS</span> MATKA</h1><div class="sub">NEON RESULTS DASHBOARD</div></div></div><div class="pill">● MOBILE FRIENDLY</div></header>
+<section class="hero"><h2>YOUR GAME.<br><span class="gradient">YOUR DASHBOARD.</span></h2><p>A colorful, mobile-friendly number dashboard with a number chart and handy tools. This page currently uses fictional demo values, not real results.</p><div class="actions"><a class="btn" href="#results">View Dashboard</a><a class="btn secondary" href="#tools">Open Number Tools</a></div></section>
+<div class="warning">⚠️ DEMO ONLY — THESE ARE NOT REAL OR LIVE RESULTS. The numbers below are fictional examples for preview purposes. No live results source is connected.</div>
 <section class="grid">
-  <article class="card wide" id="results"><h3>Latest Results <span class="status"><i class="dot"></i><span id="statusText">Demo preview</span></span></h3><div id="resultsList"></div><div class="mini" id="updated">No live source connected.</div></article>
-  <article class="card"><h3>Refresh Status</h3><div class="big" id="countdown">60s</div><p class="muted">Automatic source check every 60 seconds when the backend is connected.</p><button class="secondary" onclick="loadResults()">Check Now</button></article>
-  <article class="card full"><h3>Number Chart · 00–99</h3><div class="chart" id="chart"></div></article>
-  <article class="card" id="tools"><h3>Three-Digit Sum</h3><label for="digitInput">Enter 3 digits</label><input id="digitInput" inputmode="numeric" maxlength="3" placeholder="e.g. 258"><button onclick="calcSum()">Calculate Sum</button><p class="big" id="sumOut">—</p><div class="mini">A simple arithmetic tool.</div></article>
-  <article class="card"><h3>Random Number Picker</h3><p class="muted">Pick a random number from 00 to 99.</p><p class="big" id="randomOut">--</p><button onclick="pickNumber()">Pick Number</button><div class="mini">Random only; not a prediction.</div></article>
-  <article class="card"><h3>Quick Links</h3><p class="muted">Add your official, authorized results source here after confirming permission to display its data.</p><button class="secondary" onclick="alert('No live results source is configured yet. Add an authorized provider endpoint to the backend first.')">Source Status</button></article>
-  <article class="card full"><div class="notice"><b>Demo / transparency notice:</b> This preview does not contain real live results. It will display clearly marked demo values until an authorized data source is configured. Results are not betting advice; check local laws before using gambling-related services.</div></article>
+<article class="card wide" id="results"><h3>Latest Results <span class="status"><i class="dot"></i><span id="statusText">DEMO ONLY</span></span></h3><div class="mini" style="margin-bottom:8px">All values below are illustrative demo numbers.</div><div id="resultsList"></div><div class="mini" id="updated">No live source connected. Demo values only.</div></article>
+<article class="card"><h3>Refresh Status</h3><div class="big" id="countdown">60s</div><p class="muted">This timer is only a preview. It checks for live results only if a compatible backend is connected.</p><button class="secondary" onclick="loadResults()">Check Now</button></article>
+<article class="card full"><h3>Number Chart · 00–99 <span class="demo-tag">DEMO TOOL</span></h3><div class="chart" id="chart"></div></article>
+<article class="card" id="tools"><h3>Three-Digit Sum</h3><label for="digitInput">Enter 3 digits</label><input id="digitInput" inputmode="numeric" maxlength="3" placeholder="e.g. 258"><button onclick="calcSum()">Calculate Sum</button><p class="big" id="sumOut">—</p><div class="mini">Arithmetic tool only; it does not predict results.</div></article>
+<article class="card"><h3>Random Number Picker</h3><p class="muted">Pick a random number from 00 to 99.</p><p class="big" id="randomOut">--</p><button onclick="pickNumber()">Pick Number</button><div class="mini">Random demo only; not a prediction.</div></article>
+<article class="card"><h3>Source Status</h3><p class="muted">No verified live results source is configured. A provider must allow displaying its data before it is connected.</p><button class="secondary" onclick="alert('Demo mode only: no live results source is configured.')">Check Status</button></article>
+<article class="card full"><div class="notice"><b>Demo / transparency notice:</b> This page currently shows fictional sample numbers only. It does not provide verified live results or predictions. Automatic live updates will not work until a permitted data source and compatible backend are connected. Please follow applicable local laws.</div></article>
 </section>
-<footer class="footer">STAR Plus Matka · Demo dashboard · Live feed not connected</footer>
+<footer class="footer">STAR Plus Matka · DEMO DASHBOARD · REAL LIVE DATA NOT CONNECTED</footer>
 </main>
 <script>
-const demo=[{name:"Morning Market",numbers:["24","68","13"],updatedAt:null, demo:true},{name:"Day Market",numbers:["51","07","92"],updatedAt:null,demo:true},{name:"Evening Market",numbers:["36","80","45"],updatedAt:null,demo:true}];
-function render(items,isLive){const el=document.getElementById('resultsList');el.innerHTML='';items.forEach(item=>{const row=document.createElement('div');row.className='resultrow';const left=document.createElement('div');const name=document.createElement('b');name.textContent=item.name||'Result';const small=document.createElement('div');small.className='mini';small.textContent=item.updatedAt?('Updated '+new Date(item.updatedAt).toLocaleString()):(isLive?'Live source':'Illustrative demo only');left.append(name,small);const nums=document.createElement('div');nums.className='numchips';(item.numbers||[]).forEach(n=>{const c=document.createElement('span');c.className='chip';c.textContent=String(n);nums.appendChild(c)});row.append(left,nums);el.appendChild(row)});document.getElementById('statusText').textContent=isLive?'Connected source':'Demo preview';document.getElementById('updated').textContent=isLive?'Showing data from configured source.':'Live data is not connected; sample numbers are not real results.'}
-async function loadResults(){try{const r=await fetch('/api/results',{cache:'no-store'});if(!r.ok)throw new Error('No feed');const data=await r.json();if(!Array.isArray(data.results)||!data.results.length)throw new Error('Empty feed');render(data.results,true)}catch(e){render(demo,false)}}
+const demo=[{name:'Morning Market',numbers:['24','68','13']},{name:'Day Market',numbers:['51','07','92']},{name:'Evening Market',numbers:['36','80','45']}];
+function renderDemo(){const el=document.getElementById('resultsList');el.innerHTML='';demo.forEach(item=>{const row=document.createElement('div');row.className='resultrow';const left=document.createElement('div');const name=document.createElement('b');name.textContent=item.name;const tag=document.createElement('div');tag.className='demo-tag';tag.textContent='DEMO ONLY · NOT REAL RESULTS';left.append(name,document.createElement('br'),tag);const nums=document.createElement('div');nums.className='numchips';item.numbers.forEach(n=>{const c=document.createElement('span');c.className='chip';c.textContent=n;nums.appendChild(c)});row.append(left,nums);el.appendChild(row)});document.getElementById('statusText').textContent='DEMO ONLY';document.getElementById('updated').textContent='Fictional sample values · No live source connected.'}
+function loadResults(){renderDemo()}
 function calcSum(){const s=document.getElementById('digitInput').value.trim();const out=document.getElementById('sumOut');if(!/^\d{3}$/.test(s)){out.textContent='Enter 3 digits';return}out.textContent=String([...s].reduce((a,d)=>a+Number(d),0))}
 function pickNumber(){document.getElementById('randomOut').textContent=String(Math.floor(Math.random()*100)).padStart(2,'0')}
 const chart=document.getElementById('chart');for(let i=0;i<100;i++){const s=document.createElement('span');s.textContent=String(i).padStart(2,'0');chart.appendChild(s)}
 let remaining=60;setInterval(()=>{remaining--;if(remaining<=0){remaining=60;loadResults()}document.getElementById('countdown').textContent=remaining+'s'},1000);loadResults();
-</script>
-</body></html>
+</script></body></html>
